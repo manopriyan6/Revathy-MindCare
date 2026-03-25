@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --primary: #4a90e2;
+  --primary-dark: #2563eb;
+  --green: #a8d5ba;
+  --gold: #f4c430;
+  --red: #c0392b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-tamil: var(--font-noto-tamil);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-green: var(--green);
+  --color-gold: var(--gold);
+  --color-red: var(--red);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Smooth section transitions */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+/* Kolam ring animation */
+@keyframes kolamPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.kolam-ring {
+  animation: kolamPulse 3s ease-in-out infinite;
+}
